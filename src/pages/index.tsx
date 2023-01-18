@@ -74,7 +74,7 @@ const Homepage = () => {
         <title>Suma Wealth</title>
       </Head>
       <div
-        className="min-h-screen bg-main p-6 
+        className="min-h-screen well-red p-6 
       md:py-12
       md:px-48 
       lg:py-16 
@@ -101,7 +101,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen p-6 text-main lg:px-96 lg:py-24">
+      <div className="min-h-screen p-6 well-red lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
@@ -116,7 +116,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
+      <div className="min-h-screen well-red p-6 text-white lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">WHO ARE WE</h2>
         <div>
           <p>
@@ -141,7 +141,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-white p-6 text-main lg:px-96 lg:py-24">
+      <div className="min-h-screen bg-white p-6 well-red lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">PRESS</h2>
 
         <div className="flex gap-12">
@@ -152,7 +152,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] bg-main p-6 text-white lg:px-96 lg:py-24">
+      <div className="min-h-[50vh] well-red p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">SOCIALITÉS</h2>
         </header>
@@ -174,7 +174,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] bg-white p-6 text-main lg:px-96 lg:py-24">
+      <div className="min-h-[50vh] bg-white p-6 well-red lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">SUBSCRIBE TO OUR NEWSLETTER</h2>
           <p>
@@ -197,7 +197,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
+      <footer className="min-h-screen well-red p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">
             THANK YOU FOR CHECKING US OUT!
