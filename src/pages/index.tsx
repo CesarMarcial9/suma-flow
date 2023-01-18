@@ -41,34 +41,33 @@ const Homepage = () => {
     },
   ];
 
-  const footerLinks: {id: number; text: string; url: string}[] = [
+  const footerLinks: { id: number; text: string; url: string }[] = [
     {
-      id:1,
-      text: 'Rent or homeowner?',
-      url: '/'
+      id: 1,
+      text: "Rent or homeowner?",
+      url: "/",
     },
     {
-      id:2,
-      text: 'Grow your dinero',
-      url: '/'
+      id: 2,
+      text: "Grow your dinero",
+      url: "/",
     },
     {
-      id:3,
-      text: 'Pay your credit card',
-      url: '/'
+      id: 3,
+      text: "Pay your credit card",
+      url: "/",
     },
     {
-      id:4,
-      text: 'Freelance or self-employed',
-      url: '/'
+      id: 4,
+      text: "Freelance or self-employed",
+      url: "/",
     },
     {
-      id:5,
-      text: 'More coming soon...',
-      url: '/'
+      id: 5,
+      text: "More coming soon...",
+      url: "/",
     },
-
-  ]
+  ];
   return (
     <>
       <Head>
@@ -87,7 +86,7 @@ const Homepage = () => {
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
         <main className=" text-white">
-          <h2 className="text-4xl font-black md:text-4xl lg:text-6xl">
+          <h2 className="text-5xl font-black md:text-4xl lg:text-4xl">
             WE'RE MAKING FINANCIAL INCLUSION FUN, ACCESSIBLE AND SIMPLE.
           </h2>
           <p>
@@ -96,11 +95,15 @@ const Homepage = () => {
             young, U.S. Latinos.
           </p>
         </main>
+
+        <div>
+          <Link href={'/dashboard'} passHref>Dashboard</Link>
+        </div>
       </div>
 
       <div className="min-h-screen p-6 text-main lg:px-96 lg:py-24">
         <header>
-          <h2 className="text-6xl font-black">DINERO TOOLKIT</h2>
+          <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
         </header>
 
@@ -114,7 +117,7 @@ const Homepage = () => {
       </div>
 
       <div className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
-        <h2 className="text-6xl font-black">WHO ARE WE</h2>
+        <h2 className="text-4xl font-black">WHO ARE WE</h2>
         <div>
           <p>
             Suma is a revolutionary financial inclusion brand that inspires,
@@ -139,7 +142,7 @@ const Homepage = () => {
       </div>
 
       <div className="min-h-screen bg-white p-6 text-main lg:px-96 lg:py-24">
-        <h2 className="text-6xl font-black">PRESS</h2>
+        <h2 className="text-4xl font-black">PRESS</h2>
 
         <div className="flex gap-12">
           <p>logo 1</p>
@@ -151,7 +154,7 @@ const Homepage = () => {
 
       <div className="min-h-[50vh] bg-main p-6 text-white lg:px-96 lg:py-24">
         <header>
-          <h2 className="text-2xl font-bold">SOCIALITÉS</h2>
+          <h2 className="text-4xl font-black">SOCIALITÉS</h2>
         </header>
         <div>
           <div>
@@ -173,7 +176,7 @@ const Homepage = () => {
 
       <div className="min-h-[50vh] bg-white p-6 text-main lg:px-96 lg:py-24">
         <header>
-          <h2 className="text-2xl font-bold">SUBSCRIBE TO OUR NEWSLETTER</h2>
+          <h2 className="text-4xl font-black">SUBSCRIBE TO OUR NEWSLETTER</h2>
           <p>
             Stay up to date with the latest financial resources and tools for
             Latinos.
@@ -196,7 +199,9 @@ const Homepage = () => {
 
       <footer className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
         <header>
-          <h2 className="text-2xl font-bold">THANK YOU FOR CHECKING US OUT!</h2>
+          <h2 className="text-4xl font-black">
+            THANK YOU FOR CHECKING US OUT!
+          </h2>
         </header>
 
         <ul>
