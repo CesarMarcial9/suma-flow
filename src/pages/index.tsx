@@ -7,12 +7,44 @@ import {
 } from "react-icons/ai";
 
 const Homepage = () => {
+  const toolkit: { id: number; title: string; image: string }[] = [
+    {
+      id: 1,
+      title: "Saving juntos",
+      image: "",
+    },
+    {
+      id: 2,
+      title: "Goooal! Juntos",
+      image: "",
+    },
+    {
+      id: 3,
+      title: "Renta or homeowner",
+      image: "",
+    },
+    {
+      id: 4,
+      title: "Grow your ahorros",
+      image: "",
+    },
+    {
+      id: 5,
+      title: "Paga tu credit card",
+      image: "Freelance or self-empleado?",
+    },
+    {
+      id: 6,
+      title: "More coming soon",
+      image: "",
+    },
+  ];
   return (
     <>
       <Head>
         <title>Suma Wealth</title>
       </Head>
-      <div className="min-h-screen bg-main p-6 lg:px-96 lg:py-24">
+      <div className="min-h-screen bg-main p-6 md:py-12 md:px-48 lg:px-96 lg:py-24">
         <header>
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
@@ -29,7 +61,18 @@ const Homepage = () => {
       </div>
 
       <div className="min-h-screen p-6 text-main lg:px-96 lg:py-24">
-        <h2 className="text-6xl font-black">WELCOME TO THE SUMA UNIVERSE</h2>
+        <header>
+          <h2 className="text-6xl font-black">DINERO TOOLKIT</h2>
+          <p>We have the tools you need to take charge of your finances. </p>
+        </header>
+
+        <div className="grid grid-cols-2 gap-2 mt-12">
+          {toolkit.map((tool) => (
+            <div className="border-2 border-main flex justify-center items-center py-6">
+              <h2>{tool.title}</h2>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
@@ -113,7 +156,11 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer className="min-h-screen bg-main lg:px-96 lg:py-24"></footer>
+      <footer className="min-h-screen bg-main text-white lg:px-96 lg:py-24 p-6">
+        <header>
+          <h2 className="text-2xl font-bold">THANK YOU FOR CHECKING US OUT!</h2>
+        </header>
+      </footer>
     </>
   );
 };
