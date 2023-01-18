@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import {
   AiFillFacebook,
@@ -39,12 +40,49 @@ const Homepage = () => {
       image: "",
     },
   ];
+
+  const footerLinks: {id: number; text: string; url: string}[] = [
+    {
+      id:1,
+      text: 'Rent or homeowner?',
+      url: '/'
+    },
+    {
+      id:2,
+      text: 'Grow your dinero',
+      url: '/'
+    },
+    {
+      id:3,
+      text: 'Pay your credit card',
+      url: '/'
+    },
+    {
+      id:4,
+      text: 'Freelance or self-employed',
+      url: '/'
+    },
+    {
+      id:5,
+      text: 'More coming soon...',
+      url: '/'
+    },
+
+  ]
   return (
     <>
       <Head>
         <title>Suma Wealth</title>
       </Head>
-      <div className="min-h-screen bg-main p-6 md:py-12 md:px-48 lg:px-96 lg:py-24">
+      <div
+        className="min-h-screen bg-main p-6 
+      md:py-12
+      md:px-48 
+      lg:py-16 
+      lg:px-72
+      xl:px-96 
+      xl:py-24"
+      >
         <header>
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
@@ -66,9 +104,9 @@ const Homepage = () => {
           <p>We have the tools you need to take charge of your finances. </p>
         </header>
 
-        <div className="grid grid-cols-2 gap-2 mt-12">
+        <div className="mt-12 grid grid-cols-2 gap-2">
           {toolkit.map((tool) => (
-            <div className="border-2 border-main flex justify-center items-center py-6">
+            <div className="flex items-center justify-center border-2 border-main py-6">
               <h2>{tool.title}</h2>
             </div>
           ))}
@@ -156,10 +194,20 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer className="min-h-screen bg-main text-white lg:px-96 lg:py-24 p-6">
+      <footer className="min-h-screen bg-main p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-2xl font-bold">THANK YOU FOR CHECKING US OUT!</h2>
         </header>
+
+        <ul>
+          {footerLinks.map((item) => (
+            <li key={item.id}>
+              <Link href={item.url} passHref>
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </footer>
     </>
   );
