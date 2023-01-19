@@ -74,19 +74,21 @@ const Homepage = () => {
         <title>Suma Wealth</title>
       </Head>
       <div
-        className="min-h-screen well-red p-6 
+        className="min-h-screen p-6 bg-well-red-500
       md:py-12
       md:px-48 
       lg:py-16 
       lg:px-72
       xl:px-96 
-      xl:py-24"
+      xl:py-24
+      flex flex-col
+      "
       >
         <header>
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
         <main className=" text-white">
-          <h2 className="text-5xl font-black md:text-4xl lg:text-4xl">
+          <h2 className="text-5xl font-black md:text-4xl lg:text-4xl ">
             WE'RE MAKING FINANCIAL INCLUSION FUN, ACCESSIBLE AND SIMPLE.
           </h2>
           <p>
@@ -97,11 +99,13 @@ const Homepage = () => {
         </main>
 
         <div>
-          <Link href={'/dashboard'} passHref>Dashboard</Link>
+          <Link href={"/dashboard"} passHref className=" border-white border-2">
+            Dashboard
+          </Link>
         </div>
       </div>
 
-      <div className="min-h-screen p-6 well-red lg:px-96 lg:py-24">
+      <div className="min-h-screen p-6 lg:px-96 lg:py-24 bg-white">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
@@ -109,14 +113,14 @@ const Homepage = () => {
 
         <div className="mt-12 grid grid-cols-2 gap-2">
           {toolkit.map((tool) => (
-            <div className="flex items-center justify-center border-2 border-main py-6">
+            <div className="border-main flex items-center justify-center border-2 py-6">
               <h2>{tool.title}</h2>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="min-h-screen well-red p-6 text-white lg:px-96 lg:py-24">
+      <div className="bg-bg-well-red-500 min-h-screen p-6 text-white bg-well-red-500 lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">WHO ARE WE</h2>
         <div>
           <p>
@@ -141,7 +145,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-white p-6 well-red lg:px-96 lg:py-24">
+      <div className=" min-h-screen  p-6 lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">PRESS</h2>
 
         <div className="flex gap-12">
@@ -152,7 +156,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] well-red p-6 text-white lg:px-96 lg:py-24">
+      <div className="bg-well-red-500 min-h-[50vh] p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">SOCIALITÉS</h2>
         </header>
@@ -174,7 +178,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] bg-white p-6 well-red lg:px-96 lg:py-24">
+      <div className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">SUBSCRIBE TO OUR NEWSLETTER</h2>
           <p>
@@ -191,13 +195,13 @@ const Homepage = () => {
               name="email"
               id="email"
               placeholder="your@email.com"
-              className="border-b-2 border-main pb-2"
+              className="border-main border-b-2 pb-2"
             />
           </form>
         </div>
       </div>
 
-      <footer className="min-h-screen well-red p-6 text-white lg:px-96 lg:py-24">
+      <footer className="bg-well-red-500 min-h-screen p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">
             THANK YOU FOR CHECKING US OUT!
