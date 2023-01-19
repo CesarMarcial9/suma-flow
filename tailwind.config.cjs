@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "well-read": {
+        "well-red": {
           DEFAULT: "#AD3C2F",
           50: "#E8B2AB",
           100: "#E4A39B",
