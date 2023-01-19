@@ -150,9 +150,9 @@ const Homepage = () => {
 
         <div className="flex gap-12">
           <p>logo 1</p>
-          <p>logo 1</p>
-          <p>logo 1</p>
-          <p>logo 1</p>
+          <p>logo 2</p>
+          <p>logo 3</p>
+          <p>logo 4</p>
         </div>
       </div>
 
