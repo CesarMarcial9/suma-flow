@@ -68,20 +68,42 @@ const Homepage = () => {
       url: "/",
     },
   ];
+
+  const blogPosts: { id: number; title: string; description: string }[] = [
+    {
+      id: 1,
+      title: "post 1",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatum, molestias perspiciatis aspernatur eveniet accusantium nostrum consequatur, vel libero facilis, nulla fuga? Nulla amet quaerat ipsa non distinctio, quasi culpa!",
+    },
+    {
+      id: 2,
+      title: "post 2",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto odit beatae veniam. Recusandae, harum ipsa similique necessitatibus alias, labore accusantium corporis tenetur exercitationem architecto vero eligendi blanditiis! Culpa, dolor labore!",
+    },
+    {
+      id: 3,
+      title: "post 3",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores repudiandae voluptates incidunt consequatur at mollitia explicabo suscipit dolor? Porro, magnam quia veniam atque aperiam quidem amet nisi quod ullam sapiente.",
+    },
+  ];
+
   return (
     <>
       <Head>
         <title>Suma Wealth</title>
       </Head>
       <div
-        className="min-h-screen p-6 bg-well-red-500
-      md:py-12
-      md:px-48 
+        className="flex min-h-screen flex-col gap-6
+      bg-well-red-500
+      p-6 
+      md:py-12 
+      md:px-48
       lg:py-16 
       lg:px-72
-      xl:px-96 
-      xl:py-24
-      flex flex-col
+      xl:px-96 xl:py-24
       "
       >
         <header>
@@ -98,14 +120,18 @@ const Homepage = () => {
           </p>
         </main>
 
-        <div>
-          <Link href={"/dashboard"} passHref className=" border-white border-2">
-            Dashboard
+        <div className="flex flex-col gap-2">
+          <Link
+            href={"/"}
+            passHref
+            className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+          >
+            Download the app
           </Link>
         </div>
       </div>
 
-      <div className="min-h-screen p-6 lg:px-96 lg:py-24 bg-white">
+      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
@@ -120,7 +146,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="bg-bg-well-red-500 min-h-screen p-6 text-white bg-well-red-500 lg:px-96 lg:py-24">
+      <div className="bg-bg-well-red-500 min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">WHO ARE WE</h2>
         <div>
           <p>
@@ -156,10 +182,24 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="bg-well-red-500 min-h-[50vh] p-6 text-white lg:px-96 lg:py-24">
+      <div className="min-h-[50vh] bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <header>
-          <h2 className="text-4xl font-black">SOCIALITÉS</h2>
+          <h2 className="text-4xl font-black">BLOG & SOCIALS</h2>
+          <p>We can include a couple blog posts here.</p>
         </header>
+
+        <div className="py-6">
+          {blogPosts.map((post) => (
+            <div key={post.id}>
+              <div className="h-48 rounded-md bg-white"></div>
+              <div className="py-4">
+                <h3 className="text-2xl font-black uppercase">{post.title}</h3>
+                <p>{post.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div>
           <div>
             <div className="flex items-center gap-6">
@@ -201,7 +241,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer className="bg-well-red-500 min-h-screen p-6 text-white lg:px-96 lg:py-24">
+      <footer className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">
             THANK YOU FOR CHECKING US OUT!
