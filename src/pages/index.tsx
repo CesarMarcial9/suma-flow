@@ -7,6 +7,33 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 
+const Navbar = (open: boolean) => {
+
+  if (open) {
+    return (
+      <div className="flex flex-col gap-2">
+        <Link href={'#home'}>Home</Link>
+        <Link href={'#features'}>Features</Link>
+        <Link href={'#sumaversity'}>Sumaversity</Link>
+        <Link href={'#toolkit'}>Toolkit</Link>
+        <Link href={'#investing'}>Investing</Link>
+        <Link href={'#about'}>About us</Link>
+        <Link href={'#press'}>Press</Link>
+        <Link href={'#blog'}>Blog</Link>
+        <Link href={'#newsletter'}>NEWSLETTER</Link>
+        <Link href={'#footer'}>footer</Link>
+
+      </div>
+    )
+  }
+
+  return (
+    <div>
+
+    </div>
+  )
+}
+
 const Homepage = () => {
   const toolkit: { id: number; title: string; image: string }[] = [
     {
@@ -109,6 +136,7 @@ const Homepage = () => {
         <header>
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
+        
         <main className=" text-white">
           <h2 className="text-5xl font-black md:text-4xl lg:text-4xl ">
             WE'RE MAKING FINANCIAL INCLUSION FUN, ACCESSIBLE AND SIMPLE.
@@ -131,6 +159,26 @@ const Homepage = () => {
         </div>
       </div>
 
+      <div className="flex flex-col gap-6 min-h-screen bg-white text-well-red-500 p-6 lg:px-96 lg:py-24">
+        <header>
+          <h2 className="text-4xl font-black">Product features</h2>
+          <p>Here we could see the apps features at a glance</p>
+        </header>
+
+        <div className="flex-1 border-2 rounded-md flex justify-center items-center p-4">
+          <p>We could place a phone image with the ojective of showing multiple screens directly pulled from the app</p>
+        </div>
+      </div>
+
+      <div className="min-h-screen bg-well-red-500 text-white p-6 lg:px-96 lg:py-24">
+        <header>
+          <h2 className="text-4xl font-black">Sumaversity</h2>
+          <p>Here we can place a couple of sample videos maybe, along with a link to go into the sumaversity route.</p>
+        </header>
+
+        
+      </div>
+
       <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
@@ -139,7 +187,46 @@ const Homepage = () => {
 
         <div className="mt-12 grid grid-cols-2 gap-2">
           {toolkit.map((tool) => (
-            <div className="border-main flex items-center justify-center border-2 py-6">
+            <div key={tool.id} className="border-main flex items-center justify-center border-2 py-6">
+              <h2>{tool.title}</h2>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="min-h-screen bg-white text-well-red-500 p-6 lg:px-96 lg:py-24">
+        <header>
+          <h2 className="text-4xl font-black">Investing</h2>
+          <p>We have the tools you need to take charge of your finances. </p>
+        </header>
+
+        <div className="mt-12 grid grid-cols-2 gap-2">
+          {toolkit.map((tool) => (
+            <div key={tool.id} className="border-main flex items-center justify-center border-2 py-6">
+              <h2>{tool.title}</h2>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="min-h-screen bg-well-red-500 text-white p-6 lg:px-96 lg:py-24">
+        <header>
+          <h2 className="text-4xl font-black"></h2>
+          <p>We have the tools you need to take charge of your finances. </p>
+        </header>
+
+        
+      </div>
+
+      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24">
+        <header>
+          <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
+          <p>We have the tools you need to take charge of your finances. </p>
+        </header>
+
+        <div className="mt-12 grid grid-cols-2 gap-2">
+          {toolkit.map((tool) => (
+            <div key={tool.id} className="border-main flex items-center justify-center border-2 py-6">
               <h2>{tool.title}</h2>
             </div>
           ))}
