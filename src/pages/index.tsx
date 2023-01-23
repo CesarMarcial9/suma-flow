@@ -154,12 +154,19 @@ const Homepage = () => {
         </main>
 
         <div className="flex flex-col gap-2">
-          <Link
+        <Link
             href={"/"}
             passHref
             className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
           >
             Download the app
+          </Link>
+          <Link
+            href={"/dashboard"}
+            passHref
+            className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+          >
+            Go to your dashboard
           </Link>
         </div>
       </div>
