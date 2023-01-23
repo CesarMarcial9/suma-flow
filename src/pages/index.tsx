@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -35,6 +35,11 @@ const Navbar = (open: boolean) => {
 }
 
 const Homepage = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const toggle = () => {
+    setOpen(!open)
+  }
+
   const toolkit: { id: number; title: string; image: string }[] = [
     {
       id: 1,
@@ -133,10 +138,10 @@ const Homepage = () => {
       xl:px-96 xl:py-24
       "
       >
-        <header>
+        <header className="flex flex-col justify-between items-center">
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
         </header>
-        
+
         <main className=" text-white">
           <h2 className="text-5xl font-black md:text-4xl lg:text-4xl ">
             WE'RE MAKING FINANCIAL INCLUSION FUN, ACCESSIBLE AND SIMPLE.
@@ -159,7 +164,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 min-h-screen bg-white text-well-red-500 p-6 lg:px-96 lg:py-24">
+      <div className="flex flex-col gap-6 min-h-screen bg-white text-well-red-500 p-6 lg:px-96 lg:py-24" id="features">
         <header>
           <h2 className="text-4xl font-black">Product features</h2>
           <p>Here we could see the apps features at a glance</p>
@@ -175,11 +180,9 @@ const Homepage = () => {
           <h2 className="text-4xl font-black">Sumaversity</h2>
           <p>Here we can place a couple of sample videos maybe, along with a link to go into the sumaversity route.</p>
         </header>
-
-        
       </div>
 
-      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24">
+      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24" id="toolkit">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
@@ -194,7 +197,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-white text-well-red-500 p-6 lg:px-96 lg:py-24">
+      <div id="investing" className="min-h-screen bg-well-red-500 text-white p-6 lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">Investing</h2>
           <p>We have the tools you need to take charge of your finances. </p>
@@ -209,31 +212,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-well-red-500 text-white p-6 lg:px-96 lg:py-24">
-        <header>
-          <h2 className="text-4xl font-black"></h2>
-          <p>We have the tools you need to take charge of your finances. </p>
-        </header>
-
-        
-      </div>
-
-      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24">
-        <header>
-          <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
-          <p>We have the tools you need to take charge of your finances. </p>
-        </header>
-
-        <div className="mt-12 grid grid-cols-2 gap-2">
-          {toolkit.map((tool) => (
-            <div key={tool.id} className="border-main flex items-center justify-center border-2 py-6">
-              <h2>{tool.title}</h2>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-bg-well-red-500 min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
+      <div id="about" className="bg-bg-well-red-500 min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <h2 className="text-4xl font-black">WHO ARE WE</h2>
         <div>
           <p>
@@ -258,7 +237,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className=" min-h-screen  p-6 lg:px-96 lg:py-24">
+      <div className=" min-h-screen  p-6 lg:px-96 lg:py-24" id="press">
         <h2 className="text-4xl font-black">PRESS</h2>
 
         <div className="flex gap-12">
@@ -269,7 +248,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
+      <div id="blog" className="min-h-[50vh] bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">BLOG & SOCIALS</h2>
           <p>We can include a couple blog posts here.</p>
@@ -305,7 +284,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24">
+      <div className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24" id="newsletter">
         <header>
           <h2 className="text-4xl font-black">SUBSCRIBE TO OUR NEWSLETTER</h2>
           <p>
@@ -328,7 +307,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
+      <footer id="footer" className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
         <header>
           <h2 className="text-4xl font-black">
             THANK YOU FOR CHECKING US OUT!
