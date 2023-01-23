@@ -156,14 +156,14 @@ const Homepage = () => {
           <Link
             href={"/"}
             passHref
-            className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+            className="flex w-3/4 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
           >
             Download the app
           </Link>
           <Link
             href={"/dashboard"}
             passHref
-            className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+            className="flex w-3/4 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
           >
             Go to your dashboard
           </Link>
@@ -297,7 +297,7 @@ const Homepage = () => {
       </div>
 
       <div
-        className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24 flex flex-col gap-6"
+        className="flex min-h-[50vh] flex-col gap-6 bg-white p-6 lg:px-96 lg:py-24"
         id="newsletter"
       >
         <header>
