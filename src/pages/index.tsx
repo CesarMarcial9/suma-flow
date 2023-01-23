@@ -6,17 +6,16 @@ import {
   AiFillInstagram,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { FaChevronRight,  FaChevronUp } from "react-icons/fa";
+import { FaChevronRight, FaChevronUp } from "react-icons/fa";
 
-const Navbar = ({open}: { open: boolean}) => {
+const Navbar = ({ open }: { open: boolean }) => {
   if (open) {
     return (
       <div className="flex flex-col gap-2 text-white">
-        <Link href={"#home"}>Home</Link>
+        <Link href={"/"}>Home</Link>
         <Link href={"#features"}>Features</Link>
         <Link href={"#sumaversity"}>Sumaversity</Link>
         <Link href={"#toolkit"}>Toolkit</Link>
-        <Link href={"#investing"}>Investing</Link>
         <Link href={"#about"}>About us</Link>
         <Link href={"#press"}>Press</Link>
         <Link href={"#blog"}>Blog</Link>
@@ -135,7 +134,7 @@ const Homepage = () => {
       >
         <header className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-white">SUMA</h1>
-          <button onClick={() => toggle()} className='text-white'>
+          <button onClick={() => toggle()} className="text-white">
             {open ? <FaChevronUp /> : <FaChevronRight />}
           </button>
         </header>
@@ -154,7 +153,7 @@ const Homepage = () => {
         </main>
 
         <div className="flex flex-col gap-2">
-        <Link
+          <Link
             href={"/"}
             passHref
             className="flex w-2/3 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
@@ -188,7 +187,10 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div id="sumaversity" className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24">
+      <div
+        id="sumaversity"
+        className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
+      >
         <header>
           <h2 className="text-4xl font-black">Sumaversity</h2>
           <p>
@@ -201,27 +203,6 @@ const Homepage = () => {
       <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24" id="toolkit">
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
-          <p>We have the tools you need to take charge of your finances. </p>
-        </header>
-
-        <div className="mt-12 grid grid-cols-2 gap-2">
-          {toolkit.map((tool) => (
-            <div
-              key={tool.id}
-              className="border-main flex items-center justify-center border-2 py-6"
-            >
-              <h2>{tool.title}</h2>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div
-        id="investing"
-        className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
-      >
-        <header>
-          <h2 className="text-4xl font-black">Investing</h2>
           <p>We have the tools you need to take charge of your finances. </p>
         </header>
 
@@ -316,7 +297,7 @@ const Homepage = () => {
       </div>
 
       <div
-        className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24"
+        className="min-h-[50vh] bg-white p-6 lg:px-96 lg:py-24 flex flex-col gap-6"
         id="newsletter"
       >
         <header>
@@ -328,15 +309,21 @@ const Homepage = () => {
         </header>
 
         <div>
-          <form action="" className="flex flex-col gap-4">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="your@email.com"
-              className="border-main border-b-2 pb-2"
-            />
+          <form action="" className="flex flex-col ">
+            <div className="relative z-0">
+              <input
+                type="email"
+                id="floating_standard"
+                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+                placeholder=""
+              />
+              <label
+                htmlFor="floating_standard"
+                className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 dark:text-gray-400 peer-focus:dark:text-blue-500"
+              >
+                Email
+              </label>
+            </div>
           </form>
         </div>
       </div>
