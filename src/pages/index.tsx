@@ -191,7 +191,7 @@ const Homepage = () => {
 
       <div
         id="sumaversity"
-        className="flex flex-col gap-2 justify-between min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
+        className="flex min-h-screen flex-col justify-between gap-2 bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
       >
         <header>
           <h2 className="text-4xl font-black">Sumaversity</h2>
@@ -212,28 +212,39 @@ const Homepage = () => {
         </div>
 
         <div className="pt-4">
-          <p>But we could use a native video player instead of an embedded youtube video, it would look better.</p>
+          <p>
+            But we could use a native video player instead of an embedded
+            youtube video, it would look better.
+          </p>
           <p>Pending.</p>
         </div>
 
-        <div className="w-full flex">
-          <Link href={'/sumaversity'} className={'bg-white text-well-red-500 rounded-md font-semibold text-center w-full flex-1 py-2'}>
+        <div className="flex w-full">
+          <Link
+            href={"/sumaversity"}
+            className={
+              "w-full flex-1 rounded-md bg-white py-2 text-center font-semibold text-well-red-500"
+            }
+          >
             Start learning!
           </Link>
         </div>
       </div>
 
-      <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24" id="toolkit">
+      <div
+        className="min-h-screen bg-white p-6 text-well-red-500 lg:px-96 lg:py-24"
+        id="toolkit"
+      >
         <header>
           <h2 className="text-4xl font-black">DINERO TOOLKIT</h2>
           <p>We have the tools you need to take charge of your finances. </p>
         </header>
 
-        <div className="mt-12 grid grid-cols-2 gap-2">
+        <div className="mt-12 grid grid-cols-2 gap-2 ">
           {toolkit.map((tool) => (
             <div
               key={tool.id}
-              className="border-main flex items-center justify-center border-2 py-6"
+              className="border-main flex items-center justify-center rounded-md border border-well-red-300 py-6"
             >
               <h2>{tool.title}</h2>
             </div>
@@ -269,7 +280,10 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className=" min-h-screen  p-6 lg:px-96 lg:py-24" id="press">
+      <div
+        className=" min-h-screen  p-6 text-well-red-500 lg:px-96 lg:py-24"
+        id="press"
+      >
         <h2 className="text-4xl font-black">PRESS</h2>
 
         <div className="flex gap-12">
@@ -320,8 +334,8 @@ const Homepage = () => {
       </div>
 
       <div
-        className="flex min-h-[50vh] flex-col gap-6 bg-white p-6 lg:px-96 lg:py-24"
-        id="newsletter"
+        className="flex min-h-[50vh] flex-col gap-6 bg-white p-6 text-well-red-500 lg:px-96 lg:py-24"
+        id="newsletter "
       >
         <header>
           <h2 className="text-4xl font-black">SUBSCRIBE TO OUR NEWSLETTER</h2>
