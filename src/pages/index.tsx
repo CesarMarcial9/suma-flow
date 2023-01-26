@@ -254,22 +254,18 @@ const Homepage = () => {
 
       <div
         id="about"
-        className="bg-bg-well-red-500 min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
+        className="bg-bg-well-red-500 flex min-h-screen flex-col bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
       >
-        <h2 className="text-4xl font-black">WHO ARE WE</h2>
-        <div>
+        <h2 className="text-4xl font-black ">WHO ARE WE</h2>
+        <div className="flex grow flex-col gap-4">
           <p>
             Suma is a revolutionary financial inclusion brand that inspires,
             informs and empowers the Latinx community.
           </p>
-          <p>
-            By creating culturally relevant content, virtual experiences, and
-            providing financial tools that demystify and reimagine financial
-            inclusion through entertainment, we aim to become the trusted source
-            for the Latinx community to help them both overcome current
-            financial challenges, and better prepare for a more prosperous
-            future.
-          </p>
+
+          <div className="flex grow items-center justify-center rounded-md bg-well-red-400 px-4 text-center">
+            <p>Need advice on how to make this "about" section eye catching.</p>
+          </div>
           <p>
             Founded by an experienced team of entrepreneurs, financial
             professionals and socially minded change agents with a track record
@@ -277,6 +273,16 @@ const Homepage = () => {
             leverages a deep knowledge of what moves this influential
             demographic.
           </p>
+          <div className="flex w-full">
+            <Link
+              href={"/sumaversity"}
+              className={
+                "w-full flex-1 rounded-md bg-white py-2 text-center font-semibold text-well-red-500"
+              }
+            >
+              Learn more about us
+            </Link>
+          </div>
         </div>
       </div>
 
