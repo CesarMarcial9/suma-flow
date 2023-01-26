@@ -165,7 +165,7 @@ const Homepage = () => {
             href={"/dashboard"}
             passHref
             className="flex w-3/4 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
-            data-cy='dash'
+            data-cy="dash"
           >
             Go to your dashboard
           </Link>
@@ -191,15 +191,36 @@ const Homepage = () => {
 
       <div
         id="sumaversity"
-        className="min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
+        className="flex flex-col gap-2 justify-between min-h-screen bg-well-red-500 p-6 text-white lg:px-96 lg:py-24"
       >
         <header>
           <h2 className="text-4xl font-black">Sumaversity</h2>
           <p>
             Here we can place a couple of sample videos maybe, along with a link
-            to go into the sumaversity route.
+            to go into the sumaversity route. For example:
           </p>
         </header>
+
+        <div className="flex flex-col gap-4 pt-4">
+          <h3 className="text-2xl font-semibold">Learn and grow!</h3>
+          <iframe
+            className="w-full"
+            src="https://www.youtube.com/embed/VufroMuVGKc"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </div>
+
+        <div className="pt-4">
+          <p>But we could use a native video player instead of an embedded youtube video, it would look better.</p>
+          <p>Pending.</p>
+        </div>
+
+        <div className="w-full flex">
+          <Link href={'/sumaversity'} className={'bg-white text-well-red-500 rounded-md font-semibold text-center w-full flex-1 py-2'}>
+            Start learning!
+          </Link>
+        </div>
       </div>
 
       <div className="min-h-screen bg-white p-6 lg:px-96 lg:py-24" id="toolkit">
