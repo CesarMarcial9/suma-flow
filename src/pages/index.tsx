@@ -157,6 +157,7 @@ const Homepage = () => {
             href={"https://apps.apple.com/us/app/suma-wealth/id1593442598"}
             passHref
             className="flex w-3/4 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+            data-cy="download"
           >
             Download the app
           </Link>
@@ -164,6 +165,7 @@ const Homepage = () => {
             href={"/dashboard"}
             passHref
             className="flex w-3/4 items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+            data-cy='dash'
           >
             Go to your dashboard
           </Link>

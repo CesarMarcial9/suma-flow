@@ -11,12 +11,11 @@ import {
   LinearScale,
   ChartOptions,
   ChartData,
-  Scale
 } from "chart.js";
 import { Doughnut, Line } from "react-chartjs-2";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 ChartJS.register(
   ArcElement,
@@ -26,8 +25,7 @@ ChartJS.register(
   LineController,
   LineElement,
   PointElement,
-  LinearScale,
-
+  LinearScale
 );
 
 const data = {
@@ -62,14 +60,14 @@ const lineData: ChartData<"line"> = {
 };
 
 export const options: ChartOptions<"line"> = {
-  color: 'white',
+  color: "white",
   responsive: true,
   scales: {
     x: {
       title: {
-        color: 'white'
-      }
-    }
+        color: "white",
+      },
+    },
   },
   plugins: {
     legend: {
@@ -78,65 +76,100 @@ export const options: ChartOptions<"line"> = {
     title: {
       display: true,
       text: "Chart.js Line Chart",
-    }
-  }
+    },
+  },
 };
 
 const DashboardPage = () => {
-  const { data: session, status} = useSession()
+  const { data: session, status } = useSession();
 
-  if (status == 'unauthenticated') {
-    
+  if (status == "authenticated") {
+    return (
+      <div className="flex min-h-screen flex-col gap-8 bg-well-red-500 p-6 text-white">
+        <header>
+          <Link href={"/"} passHref className="text-xl font-semibold">
+            <div className="flex items-center gap-2">
+              <FaChevronLeft className="text-sm" />
+              <p>Home</p>
+            </div>
+          </Link>
+
+          <h2 className="text-4xl font-bold">Dashboard</h2>
+        </header>
+
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-semibold">Summary</h2>
+
+          <div className="flex flex-col items-center justify-center gap-6 rounded-md bg-well-red-300 p-2">
+            <Doughnut
+              data={data}
+              options={{ color: "white", font: { size: 32 } }}
+            />
+
+            <Link
+              href={"/dashboard/summary"}
+              className="w-full rounded-md bg-well-red-500 py-2 text-center"
+              passHref
+            >
+              learn more
+            </Link>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-semibold">Saving history</h2>
+
+          <div className="flex flex-col items-center justify-center gap-6 rounded-md bg-well-red-300 p-2">
+            <Line data={lineData} options={options} />
+
+            <Link
+              href={"/dashboard/summary"}
+              className="w-full rounded-md bg-well-red-500 py-2 text-center"
+              passHref
+            >
+              learn more
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
   }
-  
+
   return (
     <div className="flex min-h-screen flex-col gap-8 bg-well-red-500 p-6 text-white">
       <header>
-        
         <Link href={"/"} passHref className="text-xl font-semibold">
-          <div className="flex gap-2 items-center">
-            <FaChevronLeft className="text-sm"/>
+          <div className="flex items-center gap-2">
+            <FaChevronLeft className="text-sm" />
             <p>Home</p>
           </div>
         </Link>
-        
+
         <h2 className="text-4xl font-bold">Dashboard</h2>
       </header>
 
-      <div className="flex flex-col gap-4">
-        <h2 className="text-2xl font-semibold">Summary</h2>
+      <section className="flex flex-col gap-4">
+        <h2 className="text-2xl font-semibold">Welcome to your dashboard!</h2>
 
-        <div className="flex flex-col items-center justify-center gap-6 rounded-md bg-well-red-300 p-2">
-          <Doughnut
-            data={data}
-            options={{ color: "white", font: { size: 32 } }}
-          />
-
-          <Link
-            href={"/dashboard/summary"}
-            className="w-full rounded-md bg-well-red-500 py-2 text-center"
-            passHref
-          >
-            learn more
-          </Link>
+        <div className="flex flex-col gap-2">
+          <p>
+            You can sign up with the button below or check out a demo of the
+            app!
+          </p>
+          <div className="flex flex-col gap-2">
+            <button className="flex items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500" onClick={() => signIn()}>
+              Sign up
+            </button>
+            <Link
+              href={"/demo"}
+              passHref
+              className="flex items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+            >
+              Demo app
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <h2 className="text-2xl font-semibold">Saving history</h2>
-
-        <div className="flex flex-col items-center justify-center gap-6 rounded-md bg-well-red-300 p-2">
-          <Line data={lineData} options={options} />
-
-          <Link
-            href={"/dashboard/summary"}
-            className="w-full rounded-md bg-well-red-500 py-2 text-center"
-            passHref
-          >
-            learn more
-          </Link>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
