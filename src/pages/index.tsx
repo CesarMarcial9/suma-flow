@@ -279,6 +279,7 @@ const Homepage = () => {
               className={
                 "w-full flex-1 rounded-md bg-white py-2 text-center font-semibold text-well-red-500"
               }
+              data-cy="about"
             >
               Learn more about us
             </Link>
