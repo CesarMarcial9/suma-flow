@@ -157,7 +157,10 @@ const DashboardPage = () => {
             app!
           </p>
           <div className="flex flex-col gap-2">
-            <button className="flex items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500" onClick={() => signIn()}>
+            <button
+              className="flex items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+              onClick={() => signIn()}
+            >
               Sign up
             </button>
             <Link
@@ -168,6 +171,19 @@ const DashboardPage = () => {
               Demo app
             </Link>
           </div>
+        </div>
+
+        <div className="h-48 rounded-md bg-well-red-400"></div>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="text-2xl font-semibold">Unsure of where to start?</h3>
+          <Link
+            href={"/onboarding"}
+            passHref
+            className="flex items-center justify-center bg-white px-8 py-2 font-bold text-well-red-500"
+          >
+            Take our quiz!
+          </Link>
         </div>
       </section>
     </div>
