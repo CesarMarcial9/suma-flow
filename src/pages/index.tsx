@@ -287,7 +287,7 @@ const Homepage = () => {
       </div>
 
       <div
-        className=" min-h-screen  p-6 text-well-red-500 lg:px-96 lg:py-24"
+        className="flex min-h-screen flex-col gap-4  p-6 text-well-red-500 lg:px-96 lg:py-24"
         id="press"
       >
         <h2 className="text-4xl font-black">PRESS</h2>
@@ -297,6 +297,14 @@ const Homepage = () => {
           <p>logo 2</p>
           <p>logo 3</p>
           <p>logo 4</p>
+        </div>
+
+        <div className="flex grow flex-col items-center justify-center gap-2 rounded-md bg-slate-200 px-6 text-center">
+          <p>
+            We can include a couple selected articles about la Jefa Bea, and
+            about Suma.
+          </p>
+          <p>We could also include some reviews and quotes in this section.</p>
         </div>
       </div>
 
