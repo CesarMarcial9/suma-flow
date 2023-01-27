@@ -275,7 +275,7 @@ const Homepage = () => {
           </p>
           <div className="flex w-full">
             <Link
-              href={"/sumaversity"}
+              href={"/about"}
               className={
                 "w-full flex-1 rounded-md bg-white py-2 text-center font-semibold text-well-red-500"
               }
